@@ -11,6 +11,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    enum Login {
+        case Udacity(Int, String)
+        //case Facebook(String)  //Facebook login not yet implemented
+        case None
+    }
+    
+    var currentLogin = Login.None
+    
     var window: UIWindow?
 
 
