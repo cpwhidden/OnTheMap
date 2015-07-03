@@ -20,7 +20,7 @@ class SubmitLocationViewController: UIViewController {
         super.viewDidLoad()
     
         let region = MKCoordinateRegionMake(placemark!.location.coordinate, MKCoordinateSpanMake(0.5, 0.5))
-        mapView.region = region
+        mapView.setRegion(region, animated: true)
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark!.location.coordinate
         mapView.addAnnotation(annotation)
