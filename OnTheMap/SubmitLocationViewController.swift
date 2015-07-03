@@ -21,10 +21,13 @@ class SubmitLocationViewController: UIViewController {
     
         let region = MKCoordinateRegionMake(placemark!.location.coordinate, MKCoordinateSpanMake(0.5, 0.5))
         mapView.region = region
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark!.location.coordinate
+        mapView.addAnnotation(annotation)
     }
     
     @IBAction func cancelTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func submitTapped(sender: AnyObject) {
