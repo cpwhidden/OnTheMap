@@ -38,7 +38,6 @@ class UdacityClient: NSObject {
             let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5)) /* subset response data! */
             var jsonError: NSError? = nil
             let json = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &jsonError) as! NSDictionary
-            println(json)
             completionHandler(data: json, error: jsonError)
         }
         task.resume()
@@ -82,7 +81,6 @@ class UdacityClient: NSObject {
             let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5)) /* subset response data! */
             var jsonError: NSError? = nil
             let json = NSJSONSerialization.JSONObjectWithData(newData, options: NSJSONReadingOptions.AllowFragments, error: &jsonError) as! NSDictionary
-            println(json)
             completionHandler(data: json, error: nil)
         }
         task.resume()
