@@ -39,9 +39,7 @@ class ListViewController: UITableViewController {
         refresh()
     }
     
-    func refresh() {
-        var userID: String
-        
+    func refresh() {        
         let client = ParseClient.sharedInstance
         client.getStudentLocations { studentLocations, error in
             if error == nil {
@@ -49,6 +47,9 @@ class ListViewController: UITableViewController {
                     self.studentLocations = studentLocations!
                     self.tableView.reloadData()
                 }
+            } else {
+                let alert = UIAlertView(title: "Failed to connect", message: "Could not download student locations at this time", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
             }
         }
         

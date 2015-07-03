@@ -43,8 +43,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func refresh() {
-        var userID: String
-        
         let client = ParseClient.sharedInstance
         client.getStudentLocations { studentLocations, error in
             if error == nil {
@@ -60,6 +58,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                         self.mapView.addAnnotation(annotation)
                     }
                 }
+            } else {
+                let alert = UIAlertView(title: "Failed to connect", message: "Could not download student locations at this time", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()
             }
         }
         
