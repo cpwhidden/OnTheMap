@@ -59,10 +59,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func signInWithFacebook(sender: AnyObject) {
-        
-    }
 
 }
 
