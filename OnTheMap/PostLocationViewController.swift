@@ -44,10 +44,6 @@ class PostLocationViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        return true
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
